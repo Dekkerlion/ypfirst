@@ -3,7 +3,54 @@
 	<App>
 		<pages>
 			<Page title="{i18n>title}">
-				<content></content>
+				<content>
+					<HBox fitContainer="true">
+						<Table id="tableDetails" inset="false" items="{ path: '/StocksSet' }">
+							<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Title text="Stocks" level="H2"/>
+										<ToolbarSpacer/>
+										<ToolbarSpacer/>
+										<Button text="Create New" press="onCreatePress"/>
+										<!--<Input id="inputFilter" value="" placeholder="Enter filter value here" liveChange="onFilterValueChanged"/>-->
+										<!--<Button text="Sort" press="onSortPressed"/>-->
+									</content>
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>
+							<Column id="checkBox" width="15%">
+									<Text text="Select Item"/>
+								</Column>
+						
+								<Column id="columnMatnr" width="20%">
+									<Text text="Material"/>
+								</Column>
+								<Column width="20%">
+									<Text id="columnLocation" text="Storage Location"/>
+								</Column>
+								<Column id="columnQuantity" width="20%">
+									<Text text="Total Stock"/>
+								</Column>
+								<Column id="columnMeins" width="20%">
+									<Text text="Base Unit"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<CheckBox  selected="false"
+										select = "onChecked" />
+										<Text text="{Matnr}"/>
+										<Text text="{Location}"/>
+										<Text text="{Quantity}"/>
+										<Text text="{Meins}"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</HBox>
+				</content>
 			</Page>
 		</pages>
 	</App>
