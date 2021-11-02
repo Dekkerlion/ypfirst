@@ -1,0 +1,27 @@
+<core:FragmentDefinition 
+xmlns="sap.m" 
+xmlns:l="sap.ui.layout" 
+xmlns:f="sap.ui.layout.form" 
+xmlns:core="sap.ui.core">
+	<Dialog 
+	id="createStock" 
+	title="Create new stock">
+		<content>
+			<f:SimpleForm id="SimpleFormDisplay354">
+			<f:content>
+				<Label text="Material" />
+				<Input id="newMaterial" value=""/>
+				<Label text="Location" />
+				<Input id="newLocation" value=""/>
+				<Label text="Quantity" />
+				<Input id="newQuantity" value=""/>
+				<Label text="Unit Base" />
+				<Input id="newUnitBase" value="PC"/>
+			</f:content>
+			</f:SimpleForm>
+		</content>
+			<Button text="Save" press="onCreatePress"/>
+			<Button text="Cancel" press=".onCloseDialog"/>
+
+	</Dialog>
+</core:FragmentDefinition>

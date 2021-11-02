@@ -5,24 +5,23 @@
 			<Page title="{i18n>title}">
 				<content>
 					<HBox fitContainer="true">
-						<Table id="tableDetails" inset="false" items="{ path: '/StocksSet' }">
+						<Table id="tableDetails" inset="false" items="{ path: '/results' }">
 							<headerToolbar>
 								<OverflowToolbar>
 									<content>
 										<Title text="Stocks" level="H2"/>
 										<ToolbarSpacer/>
 										<ToolbarSpacer/>
-										<Button text="Create New" press="onCreatePress"/>
+										<Button id="helloDialogButton" text="Create" press=".onOpenDialog" class="sapUiSmallMarginEnd"/>
 										<!--<Input id="inputFilter" value="" placeholder="Enter filter value here" liveChange="onFilterValueChanged"/>-->
 										<!--<Button text="Sort" press="onSortPressed"/>-->
 									</content>
 								</OverflowToolbar>
 							</headerToolbar>
 							<columns>
-							<Column id="checkBox" width="15%">
+								<Column id="checkBox" width="15%">
 									<Text text="Select Item"/>
 								</Column>
-						
 								<Column id="columnMatnr" width="20%">
 									<Text text="Material"/>
 								</Column>
@@ -39,8 +38,7 @@
 							<items>
 								<ColumnListItem>
 									<cells>
-										<CheckBox  selected="false"
-										select = "onChecked" />
+										<CheckBox selected="false" select="onChecked"/>
 										<Text text="{Matnr}"/>
 										<Text text="{Location}"/>
 										<Text text="{Quantity}"/>
