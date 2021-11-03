@@ -3,7 +3,85 @@
 	<App>
 		<pages>
 			<Page title="{i18n>title}">
-				<content></content>
+				<content>
+					<HBox fitContainer="true">
+						<Table id="mainTable" inset="false" items="{ path: '/results' }">
+							<headerToolbar>
+								<OverflowToolbar>
+									<content>
+										<Title text="Materials" level="H2"/>
+										<ToolbarSpacer/>
+										<ToolbarSpacer/>
+										<Button text="Create New" press="onCreatePress"/>
+										<Button icon="sap-icon://delete" press="onDeletePress"/>
+										<!--<Input id="newMaterial" value="" placeholder="New Material"/>-->
+										<!--<Input id="newEmail" value="" placeholder="New email"/>-->
+										<!--<Input id="inputFilter" value="" placeholder="Enter filter value here" liveChange="onFilterValueChanged"/>-->
+										<!--<Button text="Sort" press="onSortPressed"/>-->
+									</content>
+								</OverflowToolbar>
+							</headerToolbar>
+							<columns>
+							<Column id="checkBox" width="3%">
+									<Text text="Select item"/>
+								</Column>
+						
+								<Column width="3%">
+									<Text id="columnMatnr" text="Material Number"/>
+								</Column>
+								<Column id="columnMaktx" width="10%">
+									<Text text="Material Description"/>
+								</Column>
+								<Column id="columnMtart" width="3%">
+									<Text text="Material Type"/>
+								</Column>
+								<Column id="columnNtgew" width="5%">
+									<Text text="Net Weight"/>
+								</Column>
+								<Column id="columnBrgew" width="5%">
+									<Text text="Gross Weight"/>
+								</Column>
+								<Column id="columnGewei" width="5%">
+									<Text text="Weight Unit"/>
+								</Column>
+								<Column id="columnVolum" width="5%">
+									<Text text="Volume"/>
+								</Column>
+								<Column id="columnVoleh" width="5%">
+									<Text text="Volume Unit"/>
+								</Column>
+								<Column id="columnCreatedAt" width="5%">
+									<Text text="Date"/>
+								</Column>
+								<Column id="columnCreatedBy" width="5%">
+									<Text text="User Name"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<CheckBox  selected="false"
+										select = "onChecked" />
+										<Text text="{Matnr}"/>
+										<Text text="{Maktx}"/>
+										<Text text="{Mtart}"/>
+										<Text text="{Ntgew}"/>
+										<Text text="{Brgew}"/>
+										<Text text="{Gewei}"/>
+										<Text text="{Volum}"/>
+										<Text text="{Voleh}"/>
+										<Text text="{CreatedAt}"/>
+										<Text text="{CreatedBy}"/>
+										<HBox>
+											<Button icon = "sap-icon://save" press = "onUpdatePress"/>
+											<!--<Button icon = "sap-icon://delete" press = "onDeletePress"/>-->
+										</HBox>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</HBox>         
+				</content>
 			</Page>
 		</pages>
 	</App>
